@@ -7,21 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --dark:   #4F513F;
-      --gold:   #FAB900;
-      --cream:  #E5DFC6;
-      --bg:     #F5F2EB;
+      --main:   #73765C;
+      --light:  #F1F4F8;
       --white:  #FFFFFF;
-      --text:   #2B2D22;
-      --muted:  #8A8C7A;
-      --border: #D6CFBA;
+      --text:   #3a3c2e;
+      --muted:  #8a8c7a;
+      --border: #dde0ea;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Red Hat Display', sans-serif;
-      background: var(--bg);
+      background: var(--main);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -30,41 +28,13 @@
 
     /* ── HEADER ── */
     header {
-      background: var(--dark);
+      background: #5a5d47;
       padding: 0 48px;
       height: 68px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-shrink: 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-
-    .logo-icon {
-      width: 38px;
-      height: 32px;
-      flex-shrink: 0;
-    }
-
-    .logo-text-wrap { display: flex; flex-direction: column; line-height: 1; }
-    .logo-brand {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 4px;
-    }
-    .logo-sub {
-      font-size: 9px;
-      font-weight: 400;
-      color: var(--cream);
-      letter-spacing: 5px;
-      margin-top: 3px;
     }
 
     .header-pill {
@@ -72,14 +42,14 @@
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(250,185,0,.35);
+      color: var(--light);
+      border: 1px solid rgba(241,244,248,.35);
       padding: 5px 14px;
       border-radius: 2px;
     }
 
-    /* ── GOLD BAR ── */
-    .gold-bar { height: 3px; background: var(--gold); flex-shrink: 0; }
+    /* ── TOP BAR ── */
+    .top-bar { height: 3px; background: var(--light); flex-shrink: 0; }
 
     /* ── MAIN ── */
     main {
@@ -95,14 +65,14 @@
       font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--light);
       margin-bottom: 10px;
     }
 
     h1 {
       font-size: 30px;
       font-weight: 700;
-      color: var(--dark);
+      color: var(--white);
       line-height: 1.2;
       margin-bottom: 10px;
     }
@@ -110,7 +80,7 @@
     .page-desc {
       font-size: 14px;
       font-weight: 400;
-      color: var(--muted);
+      color: rgba(241,244,248,.75);
       line-height: 1.7;
       margin-bottom: 40px;
       max-width: 560px;
@@ -141,18 +111,18 @@
       font-weight: 700;
       letter-spacing: 1.8px;
       text-transform: uppercase;
-      color: var(--dark);
+      color: var(--text);
       margin-bottom: 8px;
     }
 
-    label .req { color: var(--gold); margin-left: 2px; }
+    label .req { color: var(--main); margin-left: 2px; }
 
     select,
     input[type="text"],
     textarea {
       width: 100%;
       padding: 11px 14px;
-      background: var(--bg);
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: 2px;
       font-family: 'Red Hat Display', sans-serif;
@@ -166,7 +136,7 @@
     }
 
     select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%234F513F' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%2373765C' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
       padding-right: 38px;
@@ -174,7 +144,7 @@
     }
 
     select:focus, input:focus, textarea:focus {
-      border-color: var(--gold);
+      border-color: var(--main);
       background: var(--white);
     }
 
@@ -194,7 +164,7 @@
     .btn-submit {
       width: 100%;
       padding: 15px;
-      background: var(--dark);
+      background: var(--main);
       color: var(--white);
       border: none;
       border-radius: 2px;
@@ -207,7 +177,7 @@
       transition: background .18s, opacity .18s;
       margin-top: 6px;
     }
-    .btn-submit:hover:not(:disabled) { background: #3a3c2e; }
+    .btn-submit:hover:not(:disabled) { background: #5a5d47; }
     .btn-submit:disabled { opacity: .5; cursor: not-allowed; }
 
     /* ── ERROR ── */
@@ -215,11 +185,11 @@
       display: none;
       margin-top: 14px;
       padding: 13px 16px;
-      background: #fff8e1;
-      border: 1px solid #f0c84a;
+      background: #f0f2f8;
+      border: 1px solid var(--border);
       border-radius: 2px;
       font-size: 13px;
-      color: #7a5c00;
+      color: var(--text);
       line-height: 1.5;
     }
     .error-msg.show { display: block; }
@@ -235,8 +205,8 @@
     .spinner {
       width: 36px;
       height: 36px;
-      border: 3px solid var(--cream);
-      border-top-color: var(--gold);
+      border: 3px solid rgba(241,244,248,.25);
+      border-top-color: var(--main);
       border-radius: 50%;
       animation: spin .75s linear infinite;
       margin: 0 auto 18px;
@@ -263,7 +233,7 @@
     #resultCard.show { display: block; }
 
     .result-header {
-      background: var(--dark);
+      background: var(--main);
       padding: 14px 24px;
       display: flex;
       align-items: center;
@@ -275,11 +245,11 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--cream);
+      color: var(--light);
     }
     .result-badge {
-      background: var(--gold);
-      color: var(--dark);
+      background: var(--light);
+      color: var(--main);
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 1.5px;
@@ -298,7 +268,6 @@
       word-break: break-word;
     }
 
-    /* Style the --- separator and Fontes line */
     #resultText .separator {
       display: block;
       border: none;
@@ -321,8 +290,8 @@
 
     .btn-copy {
       padding: 10px 22px;
-      background: var(--gold);
-      color: var(--dark);
+      background: var(--light);
+      color: var(--text);
       border: none;
       border-radius: 2px;
       font-family: 'Red Hat Display', sans-serif;
@@ -333,12 +302,12 @@
       cursor: pointer;
       transition: background .18s;
     }
-    .btn-copy:hover { background: #e6ab00; }
+    .btn-copy:hover { background: #e0e4ee; }
 
     .btn-reset {
       padding: 10px 22px;
       background: transparent;
-      color: var(--dark);
+      color: var(--text);
       border: 1px solid var(--border);
       border-radius: 2px;
       font-family: 'Red Hat Display', sans-serif;
@@ -349,16 +318,16 @@
       cursor: pointer;
       transition: border-color .18s;
     }
-    .btn-reset:hover { border-color: var(--dark); }
+    .btn-reset:hover { border-color: var(--main); }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark);
+      background: #5a5d47;
       padding: 18px 48px;
       text-align: center;
       font-size: 11px;
       font-weight: 400;
-      color: var(--muted);
+      color: rgba(241,244,248,.55);
       letter-spacing: .8px;
       flex-shrink: 0;
     }
@@ -375,28 +344,9 @@
 <body>
 
   <header>
-    <a class="logo" href="#">
-      <!-- Logo icon: Imeri Capital mountain mark -->
-      <svg class="logo-icon" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse">
-            <line x1="-1" y1="5" x2="5" y2="-1" stroke="white" stroke-width="0.9"/>
-          </pattern>
-          <clipPath id="mcClip">
-            <polygon points="1,34 10,11 17,21 26,2 38,34"/>
-          </clipPath>
-        </defs>
-        <rect x="0" y="0" width="44" height="36" fill="url(#hatch)" clip-path="url(#mcClip)"/>
-        <polygon points="1,34 10,11 17,21 26,2 38,34" stroke="white" stroke-width="1.2" fill="none"/>
-      </svg>
-      <div class="logo-text-wrap">
-        <span class="logo-brand">IMERI</span>
-        <span class="logo-sub">CAPITAL</span>
-      </div>
-    </a>
     <span class="header-pill">Gerador de Posts</span>
   </header>
-  <div class="gold-bar"></div>
+  <div class="top-bar"></div>
 
   <main>
     <p class="page-eyebrow">Conteúdo Editorial</p>
@@ -507,7 +457,6 @@
         if (!res.ok) throw new Error('O servidor retornou um erro (' + res.status + ').');
 
         const data = await res.json();
-        // Accept both {content: "..."} and [{content: "..."}]
         const raw = Array.isArray(data) ? (data[0]?.content ?? JSON.stringify(data[0])) : (data.content ?? JSON.stringify(data));
 
         renderResult(raw);
@@ -524,12 +473,10 @@
       const container = document.getElementById('resultText');
       container.innerHTML = '';
 
-      // Split on '---' separator (agent includes it before Fontes)
       const parts = text.split(/\n---\n/);
       const mainText = parts[0] || text;
       const fontesText = parts[1] ? parts[1].trim() : null;
 
-      // Render main post content
       const pre = document.createElement('span');
       pre.style.whiteSpace = 'pre-wrap';
       pre.textContent = mainText.trim();
@@ -568,7 +515,6 @@
         btn.textContent = 'Copiado!';
         setTimeout(() => { btn.textContent = 'Copiar Texto'; }, 2200);
       }).catch(() => {
-        // Fallback for browsers without clipboard API
         const ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
